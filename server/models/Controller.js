@@ -56,7 +56,10 @@ const setupMail = (
 };
 const main = async(userEmail, userPassword, startCycle = 0) => {
     try {
-        const browser = await puppeteer.launch({ headless: false });
+        const browser = await puppeteer.launch({
+            headless: false,
+            executablePath: '/usr/bin/chromium-browser',
+        });
         const page = await browser.newPage();
         await page.goto('https://app.invoiceocean.com/login', {
             waitUntil: 'load',
