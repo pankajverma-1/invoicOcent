@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build": "cd server && npm install && node ./node_modules/puppeteer/install.js && cd ../client && npm install && npm run build",
+        "build": "cd server && npm install  && cd ../client && npm install && npm run build",
+        "postinstall": "cd server ./node node_modules/puppeteer/install.js",
         "start": "node server/app.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
